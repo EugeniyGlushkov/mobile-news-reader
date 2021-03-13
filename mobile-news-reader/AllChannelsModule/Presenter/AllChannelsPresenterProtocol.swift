@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AllChannelPresenterProtocol: AnyObject {
+protocol AllChannelsPresenterProtocol: AnyObject {
     init(view: AllChannelsViewProtocol, service: AllChannelsServiceProtocol)
     func showChannels()
 }

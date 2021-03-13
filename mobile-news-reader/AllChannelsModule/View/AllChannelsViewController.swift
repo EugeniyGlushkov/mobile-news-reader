@@ -8,7 +8,7 @@
 import UIKit
 
 class AllChannelsViewController: UIViewController {
-    var presenter: AllChannelPresenterProtocol!
+    var presenter: AllChannelsPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +16,10 @@ class AllChannelsViewController: UIViewController {
 }
 
 extension AllChannelsViewController: AllChannelsViewProtocol {
+    func setPresenter(presenter: AllChannelsPresenter) {
+        self.presenter = presenter
+    }
+    
     func setChannels(channels: [Channel]) {
         
     }

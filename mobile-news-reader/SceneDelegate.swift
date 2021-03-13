@@ -9,6 +9,7 @@ import UIKit
 
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    let ALL_CHANNELS_NAVIGATION_CONTROLLER_INDEX = 0
 
     var window: UIWindow?
 
@@ -18,6 +19,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        ModuleConfigurator.configurateAllChannelsModule(vc: getAllChannelsVC())
+    }
+    
+    private func getAllChannelsVC() -> AllChannelsViewController {
+        return getVCFromNavController(byNavControllerIdxInTabBarController: ALL_CHANNELS_NAVIGATION_CONTROLLER_INDEX) as! AllChannelsViewController
+    }
+    
+    private func getVCFromNavController(byNavControllerIdxInTabBarController index: Int) -> UIViewController {
+        let tabBarController = window?.rootViewController as! UITabBarController
+        let navigationController = tabBarController.customizableViewControllers?[index] as? UINavigationController
+        return (navigationController?.viewControllers.first)!
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

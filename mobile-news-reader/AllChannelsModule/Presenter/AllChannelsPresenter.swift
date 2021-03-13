@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AllChannelPresenter: AllChannelPresenterProtocol {
+class AllChannelsPresenter: AllChannelsPresenterProtocol {
     private let view: AllChannelsViewProtocol
     private let service: AllChannelsServiceProtocol
     
