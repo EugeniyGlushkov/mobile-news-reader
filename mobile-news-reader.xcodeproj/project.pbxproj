@@ -13,6 +13,11 @@
 		6C5CE94425FCF09B005B2795 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5CE94325FCF09B005B2795 /* CoreData.framework */; };
 		6C5CE94725FCF12F005B2795 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CE94625FCF12F005B2795 /* CoreDataStack.swift */; };
 		6C5CE94D25FCF165005B2795 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CE94C25FCF165005B2795 /* CoreDataHelper.swift */; };
+		6C5CE95825FCFD5D005B2795 /* AllChannelsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CE95725FCFD5D005B2795 /* AllChannelsViewProtocol.swift */; };
+		6C5CE95D25FCFDC1005B2795 /* AllChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CE95C25FCFDC1005B2795 /* AllChannelsViewController.swift */; };
+		6C5CE96225FCFEEB005B2795 /* AllChannelPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CE96125FCFEEB005B2795 /* AllChannelPresenterProtocol.swift */; };
+		6C5CE96825FCFF4B005B2795 /* AllChannelsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CE96725FCFF4B005B2795 /* AllChannelsServiceProtocol.swift */; };
+		6C5CE96D25FD00D2005B2795 /* AllChannelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CE96C25FD00D2005B2795 /* AllChannelPresenter.swift */; };
 		6C6E9AB025FC9C460019D774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6E9AAF25FC9C460019D774 /* AppDelegate.swift */; };
 		6C6E9AB225FC9C460019D774 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6E9AB125FC9C460019D774 /* SceneDelegate.swift */; };
 		6C6E9AB425FC9C460019D774 /* AllChannelsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6E9AB325FC9C460019D774 /* AllChannelsNavigationController.swift */; };
@@ -49,6 +54,11 @@
 		6C5CE94325FCF09B005B2795 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6C5CE94625FCF12F005B2795 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		6C5CE94C25FCF165005B2795 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		6C5CE95725FCFD5D005B2795 /* AllChannelsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChannelsViewProtocol.swift; sourceTree = "<group>"; };
+		6C5CE95C25FCFDC1005B2795 /* AllChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChannelsViewController.swift; sourceTree = "<group>"; };
+		6C5CE96125FCFEEB005B2795 /* AllChannelPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChannelPresenterProtocol.swift; sourceTree = "<group>"; };
+		6C5CE96725FCFF4B005B2795 /* AllChannelsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChannelsServiceProtocol.swift; sourceTree = "<group>"; };
+		6C5CE96C25FD00D2005B2795 /* AllChannelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChannelPresenter.swift; sourceTree = "<group>"; };
 		6C6E9AAC25FC9C460019D774 /* mobile-news-reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-news-reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C6E9AAF25FC9C460019D774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C6E9AB125FC9C460019D774 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +138,23 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		6C5CE95625FCFCC8005B2795 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6C5CE96125FCFEEB005B2795 /* AllChannelPresenterProtocol.swift */,
+				6C5CE96C25FD00D2005B2795 /* AllChannelPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		6C5CE96625FCFF2D005B2795 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6C5CE96725FCFF4B005B2795 /* AllChannelsServiceProtocol.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		6C6E9AA325FC9C460019D774 = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +215,8 @@
 		6C6E9B0525FCD84D0019D774 /* AllChannelsModule */ = {
 			isa = PBXGroup;
 			children = (
+				6C5CE96625FCFF2D005B2795 /* Service */,
+				6C5CE95625FCFCC8005B2795 /* Presenter */,
 				6C6E9B0625FCD8D70019D774 /* View */,
 			);
 			path = AllChannelsModule;
@@ -197,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				6C6E9AB325FC9C460019D774 /* AllChannelsNavigationController.swift */,
+				6C5CE95725FCFD5D005B2795 /* AllChannelsViewProtocol.swift */,
+				6C5CE95C25FCFDC1005B2795 /* AllChannelsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,10 +395,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C5CE94D25FCF165005B2795 /* CoreDataHelper.swift in Sources */,
+				6C5CE96D25FD00D2005B2795 /* AllChannelPresenter.swift in Sources */,
 				6C6E9AB425FC9C460019D774 /* AllChannelsNavigationController.swift in Sources */,
+				6C5CE96825FCFF4B005B2795 /* AllChannelsServiceProtocol.swift in Sources */,
+				6C5CE95825FCFD5D005B2795 /* AllChannelsViewProtocol.swift in Sources */,
 				6C6E9B1F25FCDCCC0019D774 /* SearchNewsNavigationController.swift in Sources */,
 				6C6E9B2E25FCDFA60019D774 /* FavouriteChannelsNavigationController.swift in Sources */,
 				6C5CE94725FCF12F005B2795 /* CoreDataStack.swift in Sources */,
+				6C5CE96225FCFEEB005B2795 /* AllChannelPresenterProtocol.swift in Sources */,
+				6C5CE95D25FCFDC1005B2795 /* AllChannelsViewController.swift in Sources */,
 				6C5CE93C25FCEF3D005B2795 /* Channel+CoreDataClass.swift in Sources */,
 				6C6E9AB025FC9C460019D774 /* AppDelegate.swift in Sources */,
 				6C6E9AB225FC9C460019D774 /* SceneDelegate.swift in Sources */,
