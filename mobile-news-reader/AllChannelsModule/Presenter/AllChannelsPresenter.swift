@@ -17,6 +17,6 @@ class AllChannelsPresenter: AllChannelsPresenterProtocol {
     }
     
     func showChannels() {
-        view.setChannels(channels: [])
+        view.setChannels(channels: service.getAllChannels())
     }
 }

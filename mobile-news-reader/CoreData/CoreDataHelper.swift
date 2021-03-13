@@ -10,7 +10,7 @@ import CoreData
 
 class CoreDataHelper {
     
-    let stack = CoreDataStack(modelName: "mobile-news-reader")!
+    let stack = CoreDataStack(modelName: "Model")!
     var context:NSManagedObjectContext
     
     var fetchedResultsController : NSFetchedResultsController<NSFetchRequestResult>? {

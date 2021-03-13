@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6C5CE93625FCEE6A005B2795 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CE93425FCEE6A005B2795 /* Model.xcdatamodeld */; };
-		6C5CE93C25FCEF3D005B2795 /* Channel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CE93A25FCEF3D005B2795 /* Channel+CoreDataClass.swift */; };
-		6C5CE93D25FCEF3D005B2795 /* Channel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CE93B25FCEF3D005B2795 /* Channel+CoreDataProperties.swift */; };
 		6C5CE94425FCF09B005B2795 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5CE94325FCF09B005B2795 /* CoreData.framework */; };
 		6C5CE94725FCF12F005B2795 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CE94625FCF12F005B2795 /* CoreDataStack.swift */; };
 		6C5CE94D25FCF165005B2795 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5CE94C25FCF165005B2795 /* CoreDataHelper.swift */; };
@@ -31,6 +29,8 @@
 		6C6E9B2E25FCDFA60019D774 /* FavouriteChannelsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6E9B2D25FCDFA60019D774 /* FavouriteChannelsNavigationController.swift */; };
 		6C70589525FD38E400E7FCDE /* ModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C70589425FD38E400E7FCDE /* ModuleConfigurator.swift */; };
 		6C70589A25FD3C3E00E7FCDE /* AllChannelsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C70589925FD3C3E00E7FCDE /* AllChannelsService.swift */; };
+		6C7058AF25FD50A200E7FCDE /* Channel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7058AD25FD50A200E7FCDE /* Channel+CoreDataClass.swift */; };
+		6C7058B025FD50A200E7FCDE /* Channel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7058AE25FD50A200E7FCDE /* Channel+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,6 @@
 
 /* Begin PBXFileReference section */
 		6C5CE93525FCEE6A005B2795 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		6C5CE93A25FCEF3D005B2795 /* Channel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		6C5CE93B25FCEF3D005B2795 /* Channel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6C5CE94325FCF09B005B2795 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6C5CE94625FCF12F005B2795 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		6C5CE94C25FCF165005B2795 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
@@ -81,6 +79,8 @@
 		6C6E9B2D25FCDFA60019D774 /* FavouriteChannelsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteChannelsNavigationController.swift; sourceTree = "<group>"; };
 		6C70589425FD38E400E7FCDE /* ModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleConfigurator.swift; sourceTree = "<group>"; };
 		6C70589925FD3C3E00E7FCDE /* AllChannelsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChannelsService.swift; sourceTree = "<group>"; };
+		6C7058AD25FD50A200E7FCDE /* Channel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6C7058AE25FD50A200E7FCDE /* Channel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Channel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +121,8 @@
 		6C5CE92A25FCEE33005B2795 /* Channel */ = {
 			isa = PBXGroup;
 			children = (
-				6C5CE93A25FCEF3D005B2795 /* Channel+CoreDataClass.swift */,
-				6C5CE93B25FCEF3D005B2795 /* Channel+CoreDataProperties.swift */,
+				6C7058AD25FD50A200E7FCDE /* Channel+CoreDataClass.swift */,
+				6C7058AE25FD50A200E7FCDE /* Channel+CoreDataProperties.swift */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -432,18 +432,18 @@
 				6C5CE96D25FD00D2005B2795 /* AllChannelsPresenter.swift in Sources */,
 				6C6E9AB425FC9C460019D774 /* AllChannelsNavigationController.swift in Sources */,
 				6C5CE96825FCFF4B005B2795 /* AllChannelsServiceProtocol.swift in Sources */,
+				6C7058AF25FD50A200E7FCDE /* Channel+CoreDataClass.swift in Sources */,
 				6C5CE95825FCFD5D005B2795 /* AllChannelsViewProtocol.swift in Sources */,
 				6C6E9B1F25FCDCCC0019D774 /* SearchNewsNavigationController.swift in Sources */,
+				6C7058B025FD50A200E7FCDE /* Channel+CoreDataProperties.swift in Sources */,
 				6C6E9B2E25FCDFA60019D774 /* FavouriteChannelsNavigationController.swift in Sources */,
 				6C70589525FD38E400E7FCDE /* ModuleConfigurator.swift in Sources */,
 				6C5CE94725FCF12F005B2795 /* CoreDataStack.swift in Sources */,
 				6C5CE96225FCFEEB005B2795 /* AllChannelsPresenterProtocol.swift in Sources */,
 				6C5CE95D25FCFDC1005B2795 /* AllChannelsViewController.swift in Sources */,
 				6C5CE97A25FD0BD1005B2795 /* MainTabBarController.swift in Sources */,
-				6C5CE93C25FCEF3D005B2795 /* Channel+CoreDataClass.swift in Sources */,
 				6C6E9AB025FC9C460019D774 /* AppDelegate.swift in Sources */,
 				6C6E9AB225FC9C460019D774 /* SceneDelegate.swift in Sources */,
-				6C5CE93D25FCEF3D005B2795 /* Channel+CoreDataProperties.swift in Sources */,
 				6C5CE93625FCEE6A005B2795 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

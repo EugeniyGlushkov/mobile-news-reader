@@ -18,7 +18,10 @@ extension Channel {
 
     @NSManaged public var id: String?
     @NSManaged public var name: String?
+    @NSManaged public var favourite: Bool
 
 }
 
-extension Channel: Identifiable {}
+extension Channel : Identifiable {
+
+}
