@@ -5,9 +5,19 @@
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="New" representedClassName="New" syncable="YES"/>
+    <entity name="New" representedClassName="New" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="image_url" optional="YES" attributeType="URI"/>
+        <attribute name="new_description" optional="YES" attributeType="String"/>
+        <attribute name="published" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="source_id" optional="YES" attributeType="String"/>
+        <attribute name="source_name" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+    </entity>
     <elements>
         <element name="Channel" positionX="-63" positionY="-18" width="128" height="74"/>
-        <element name="New" positionX="-63" positionY="9" width="128" height="29"/>
+        <element name="New" positionX="-63" positionY="9" width="128" height="164"/>
     </elements>
 </model>
