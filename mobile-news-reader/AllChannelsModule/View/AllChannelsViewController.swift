@@ -10,7 +10,7 @@ import UIKit
 class AllChannelsViewController: UIViewController {
     var presenter: AllChannelsPresenterProtocol!
     
-    var channels: [Channel] = Array<Channel>()
+    var channels = Array<ChannelTO>()
     
     //MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
@@ -34,7 +34,7 @@ extension AllChannelsViewController: AllChannelsViewProtocol {
         self.presenter = presenter
     }
     
-    func setChannels(channels: [Channel]) {
+    func setChannels(channels: [ChannelTO]) {
         self.channels = channels
         tableView.reloadData()
     }

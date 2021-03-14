@@ -9,10 +9,13 @@ import Foundation
 import CoreData
 
 class AllChannelsService: AllChannelsServiceProtocol {
-    private var helper = CoreDataHelper()
-    func getAllChannels() -> [Channel] {
-        return [Channel(id: "1", name: "First", favourite: true, context: helper.context),
-                Channel(id: "2", name: "Second", favourite: false, context: helper.context),
-                Channel(id: "3", name: "Third", favourite: true, context: helper.context)]
+    private let repository: ChannelDaoProtocol
+    
+    required init(repository: ChannelDaoProtocol) {
+        self.repository = repository
+    }
+    
+    func getAllChannels() -> [ChannelTO] {
+        return repository.getAll()
     }
 }
