@@ -17,7 +17,7 @@ class AllChannelsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.registerNib(with: AllChannelsTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
@@ -51,10 +51,22 @@ extension AllChannelsViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = channels[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(with: AllChannelsTableViewCell.self)
+        let channel = channels[indexPath.row]
+        cell.textLabel?.text = channel.name
+        cell.addToFavouritesHandler = {
+            self.presenter.addToFavourites(channel: channel)
+        }
         return cell
     }
+}
+
+extension UITableView {
+    func registerNib(with type: NameDiscribable.Type) {
+        self.register(UINib(nibName: type.typeName, bundle: nil), forCellReuseIdentifier: type.typeName)
+    }
     
-    
+    func dequeueReusableCell<T: NameDiscribable> (with type: T.Type) -> T {
+        return self.dequeueReusableCell(withIdentifier: type.typeName) as! T
+    }
 }

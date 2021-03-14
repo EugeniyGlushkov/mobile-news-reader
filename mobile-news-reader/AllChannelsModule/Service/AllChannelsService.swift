@@ -24,4 +24,10 @@ class AllChannelsService: AllChannelsServiceProtocol {
             repository.add(channel: channel)
         }
     }
+    
+    func addToFavourites(channel: ChannelTO) {
+        var addedChannel = ChannelTO.copyOf(channel: channel)
+        addedChannel.favourite = true
+        repository.update(channel: addedChannel)
+    }
 }

@@ -39,6 +39,10 @@ class AllChannelsPresenter: AllChannelsPresenterProtocol {
                     self.view?.failure(error: error)
                 }
             }
-        }TODO*/
+        }*/
+    }
+    
+    func addToFavourites(channel: ChannelTO) {
+        service.addToFavourites(channel: channel)
     }
 }

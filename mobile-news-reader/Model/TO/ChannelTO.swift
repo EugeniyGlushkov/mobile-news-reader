@@ -10,7 +10,11 @@ import Foundation
 struct ChannelTO {
     let id: String
     let name: String
-    let favourite: Bool
+    var favourite: Bool
+    
+    static func copyOf(channel: ChannelTO) -> ChannelTO {
+        return ChannelTO(id: channel.id, name: channel.name, favourite: channel.favourite)
+    }
     
     static func valueOf(channel: Channel) -> Self {
         return ChannelTO(id: channel.id!, name: channel.name!, favourite: channel.favourite)

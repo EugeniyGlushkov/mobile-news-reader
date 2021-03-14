@@ -10,5 +10,5 @@ import Foundation
 protocol AllChannelsPresenterProtocol: AnyObject {
     init(view: AllChannelsViewProtocol, service: AllChannelsServiceProtocol, netService: ChannelsNetServiceProtocol)
     func showChannels()
-    
+    func addToFavourites(channel: ChannelTO)    
 }
