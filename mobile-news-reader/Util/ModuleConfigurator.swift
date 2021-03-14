@@ -13,7 +13,7 @@ protocol Configurator {
 
 class ModuleConfigurator: Configurator {
     static func configurateAllChannelsModule(vc: AllChannelsViewProtocol) {
-        let repository = ChannelDao()
+        let repository = ChannelDao.getInstance()
         let service = AllChannelsService(repository: repository)
         let presenter = AllChannelsPresenter(view: vc, service: service)
         vc.setPresenter(presenter: presenter)
