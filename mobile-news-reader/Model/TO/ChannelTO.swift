@@ -15,4 +15,15 @@ struct ChannelTO {
     static func valueOf(channel: Channel) -> Self {
         return ChannelTO(id: channel.id!, name: channel.name!, favourite: channel.favourite)
     }
+    
+    static func valueOf(source: Source) -> Self {
+        return ChannelTO(id: source.id, name: source.name, favourite: false)
+    }
+    
+    static func valuesFrom(sources: Sources) -> [ChannelTO] {
+        return sources.sources.map{
+            source in
+            return valueOf(source: source)
+        }
+    }
 }

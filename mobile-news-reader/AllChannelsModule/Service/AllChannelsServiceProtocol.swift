@@ -7,7 +7,8 @@
 
 import Foundation
 
-protocol AllChannelsServiceProtocol: AnyObject {
+protocol AllChannelsServiceProtocol {
     init(repository: ChannelDaoProtocol)
     func getAllChannels() -> [ChannelTO]
+    func addAll(channels: [ChannelTO])
 }

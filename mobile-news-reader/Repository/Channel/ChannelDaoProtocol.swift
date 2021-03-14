@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ChannelDaoProtocol: AnyObject {
+protocol ChannelDaoProtocol {
     func add(channel: ChannelTO)
     func remove(byId id: String, byName name: String)
     func update(channel: ChannelTO)

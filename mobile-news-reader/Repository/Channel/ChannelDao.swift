@@ -71,7 +71,9 @@ class ChannelDao: ChannelDaoProtocol {
     }
     
     private func get(byId id: String, byName name: String, fetchRequest: NSFetchRequest<Channel>) -> Channel? {
-        fetchRequest.predicate = NSPredicate(format: "any id = '\(id)' AND name = '\(name)'")
+        let predicate1 = NSPredicate(format: "any id = \"\(id)\"")
+        let predicate2 = NSPredicate(format: "any name = \"\(name)\"")
+        fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
         var channels: [Channel]
         
         do {

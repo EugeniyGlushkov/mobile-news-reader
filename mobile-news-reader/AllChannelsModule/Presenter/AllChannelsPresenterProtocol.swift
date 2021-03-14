@@ -8,6 +8,7 @@
 import Foundation
 
 protocol AllChannelsPresenterProtocol: AnyObject {
-    init(view: AllChannelsViewProtocol, service: AllChannelsServiceProtocol)
+    init(view: AllChannelsViewProtocol, service: AllChannelsServiceProtocol, netService: ChannelsNetServiceProtocol)
     func showChannels()
+    
 }

@@ -34,9 +34,14 @@ extension AllChannelsViewController: AllChannelsViewProtocol {
         self.presenter = presenter
     }
     
-    func setChannels(channels: [ChannelTO]) {
+    func update(channels: [ChannelTO]) {
         self.channels = channels
         tableView.reloadData()
+    }
+    
+    func failure(error: Error){
+        //TODO: - need to be implemented
+        print(error)
     }
 }
 
