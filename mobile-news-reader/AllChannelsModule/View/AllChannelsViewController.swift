@@ -30,7 +30,7 @@ class AllChannelsViewController: UIViewController {
 }
 
 extension AllChannelsViewController: AllChannelsViewProtocol {
-    func setPresenter(presenter: AllChannelsPresenter) {
+    func setPresenter(presenter: AllChannelsPresenterProtocol) {
         self.presenter = presenter
     }
     
@@ -58,6 +58,12 @@ extension AllChannelsViewController: UITableViewDataSource, UITableViewDelegate 
             self.presenter.addToFavourites(channel: channel)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channel = channels[indexPath.row]
+        let newsVC = ModuleConfigurator.createNewsModule(channel: channel)
+        navigationController?.pushViewController(newsVC, animated: true)
     }
 }
 

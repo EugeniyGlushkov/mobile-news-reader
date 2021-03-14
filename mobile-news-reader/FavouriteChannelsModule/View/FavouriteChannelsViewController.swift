@@ -56,4 +56,10 @@ extension FavouriteChannelsViewController: UITableViewDataSource, UITableViewDel
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channel = channels[indexPath.row]
+        let newsVC = ModuleConfigurator.createNewsModule(channel: channel)
+        navigationController?.pushViewController(newsVC, animated: true)        
+    }
 }

@@ -9,6 +9,6 @@ import Foundation
 
 protocol AllChannelsViewProtocol: AnyObject {
     func update(channels: [ChannelTO])
-    func setPresenter(presenter: AllChannelsPresenter)
+    func setPresenter(presenter: AllChannelsPresenterProtocol)
     func failure(error: Error)
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ChannelsNetService: ChannelsNetServiceProtocol {
+class NetService: NetServiceProtocol {
     private static let APY_KEY = "c1bd18a5fe4b48fd80074bc490ace0bb"
     
     func getChannels(completion: @escaping (Result<Sources?, Error>) -> Void) {

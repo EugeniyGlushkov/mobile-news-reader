@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ChannelsNetServiceProtocol {
+protocol NetServiceProtocol {
     func getChannels(completion: @escaping (Result<Sources?, Error>) -> Void)
 }

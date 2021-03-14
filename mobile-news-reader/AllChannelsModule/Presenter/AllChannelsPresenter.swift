@@ -10,9 +10,9 @@ import Foundation
 class AllChannelsPresenter: AllChannelsPresenterProtocol {
     weak private var view: AllChannelsViewProtocol!
     private let service: AllChannelsServiceProtocol
-    private let netService: ChannelsNetServiceProtocol
+    private let netService: NetServiceProtocol
         
-    required init(view: AllChannelsViewProtocol, service: AllChannelsServiceProtocol, netService: ChannelsNetServiceProtocol) {
+    required init(view: AllChannelsViewProtocol, service: AllChannelsServiceProtocol, netService: NetServiceProtocol) {
         self.view = view
         self.service = service
         self.netService = netService
