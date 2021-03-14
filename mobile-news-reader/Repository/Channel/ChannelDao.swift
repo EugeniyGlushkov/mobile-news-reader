@@ -105,7 +105,7 @@ class ChannelDao: ChannelDaoProtocol {
     
     func getFavourites() -> [ChannelTO] {
         let fetchRequest: NSFetchRequest<Channel> = Channel.fetchRequest()
-        let predicate = NSPredicate(format: "any favourites = true")
+        let predicate = NSPredicate(format: "any favourite = true")
         fetchRequest.predicate = predicate
         var channels: [Channel]
         

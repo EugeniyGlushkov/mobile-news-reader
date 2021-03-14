@@ -141,7 +141,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="61j-8i-mhK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="61j-8i-mhK">
                                 <rect key="frame" x="20" y="88" width="374" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -154,11 +154,11 @@
                             <constraint firstItem="61j-8i-mhK" firstAttribute="leading" secondItem="LvX-Gr-LWI" secondAttribute="leading" constant="20" id="d1P-jG-Bwn"/>
                             <constraint firstItem="61j-8i-mhK" firstAttribute="bottom" secondItem="LvX-Gr-LWI" secondAttribute="bottom" id="oKL-Lp-5jA"/>
                         </constraints>
-                        <connections>
-                            <outlet property="tableView" destination="61j-8i-mhK" id="nEz-2I-0SJ"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="qpG-uA-RCT"/>
+                    <connections>
+                        <outlet property="tableView" destination="61j-8i-mhK" id="ZDY-fU-1Xf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4D1-wj-2tb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

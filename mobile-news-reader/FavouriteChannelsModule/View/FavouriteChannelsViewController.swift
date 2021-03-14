@@ -23,6 +23,11 @@ class FavouriteChannelsViewController: UIViewController {
         tableView.delegate = self
         tableView.tableFooterView = UIView()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        presenter.showChannels()
+        super.viewDidAppear(animated)
+    }
 }
 
 extension FavouriteChannelsViewController: FavouriteChannelsViewProtocol {
@@ -47,6 +52,7 @@ extension FavouriteChannelsViewController: UITableViewDataSource, UITableViewDel
         cell.textLabel?.text = channel.name
         cell.deleteFromFavouritesHandler = {
             self.presenter.deleteFromFavourites(channel: channel)
+            self.presenter.showChannels()
         }
         return cell
     }
