@@ -36,12 +36,28 @@ class ChannelDao: ChannelDaoProtocol {
         saveContext()
     }
     
-    func remove(byId id: String, byName: String) {
+    func remove(byId id: String, byName name: String) {
+        let fetchRequest: NSFetchRequest<Channel> = Channel.fetchRequest()
         
+        guard let channelToDelete = get(byId: id, byName: name, fetchRequest: fetchRequest) else {
+            return
+        }
+        
+        helper.context.delete(channelToDelete)
+        saveContext()
     }
     
     func update(channel: ChannelTO) {
+        let fetchRequest: NSFetchRequest<Channel> = Channel.fetchRequest()
         
+        guard let channelToUpdate = get(byId: channel.id, byName: channel.name, fetchRequest: fetchRequest) else {
+            return
+        }
+        
+        channelToUpdate.setValue(channel.id, forKey: "id")
+        channelToUpdate.setValue(channel.name, forKey: "name")
+        channelToUpdate.setValue(channel.favourite, forKey: "favourite")
+        saveContext()
     }
     
     func get(byId id: String, byName name: String) -> ChannelTO? {
@@ -55,7 +71,7 @@ class ChannelDao: ChannelDaoProtocol {
     }
     
     private func get(byId id: String, byName name: String, fetchRequest: NSFetchRequest<Channel>) -> Channel? {
-        fetchRequest.predicate = NSPredicate(format: "any id = '\(id)'AND name = '\(name)'")
+        fetchRequest.predicate = NSPredicate(format: "any id = '\(id)' AND name = '\(name)'")
         var channels: [Channel]
         
         do {
@@ -68,12 +84,7 @@ class ChannelDao: ChannelDaoProtocol {
         return channels.isEmpty ? nil : channels[0]
     }
     
-    func getAll() -> [ChannelTO] {
-        /*return [ChannelTO(id: "1", name: "First", favourite: true),
-                ChannelTO(id: "2", name: "Second", favourite: false),
-                ChannelTO(id: "3", name: "Third", favourite: true)]
-         */
-        
+    func getAll() -> [ChannelTO] {        
         let fetchRequest: NSFetchRequest<Channel> = Channel.fetchRequest()
         var channels: [Channel]
         

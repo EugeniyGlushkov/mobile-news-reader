@@ -9,7 +9,7 @@ import Foundation
 
 protocol ChannelDaoProtocol: AnyObject {
     func add(channel: ChannelTO)
-    func remove(byId id: String, byName: String)
+    func remove(byId id: String, byName name: String)
     func update(channel: ChannelTO)
     func get(byId id: String, byName name: String) -> ChannelTO?
     func getAll() -> [ChannelTO]
