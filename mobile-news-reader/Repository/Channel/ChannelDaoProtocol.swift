@@ -13,4 +13,5 @@ protocol ChannelDaoProtocol {
     func update(channel: ChannelTO)
     func get(byId id: String, byName name: String) -> ChannelTO?
     func getAll() -> [ChannelTO]
+    func getFavourites() -> [ChannelTO]
 }

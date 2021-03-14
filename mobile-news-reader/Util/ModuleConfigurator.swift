@@ -19,4 +19,11 @@ class ModuleConfigurator: Configurator {
         let presenter = AllChannelsPresenter(view: vc, service: service, netService: webService)
         vc.setPresenter(presenter: presenter)
     }
+    
+    static func configurateFavouriteChannelsModule(vc: FavouriteChannelsViewProtocol) {
+        let repository = ChannelDao.getInstance()
+        let service = FavouriteChannelsService(repository: repository)
+        let presenter = FavouriteChannelsPresenter(view: vc, service: service)
+        vc.setPresenter(presenter: presenter)
+    }
 }

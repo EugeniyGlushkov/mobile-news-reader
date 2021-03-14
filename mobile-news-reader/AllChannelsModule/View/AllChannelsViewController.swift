@@ -8,7 +8,7 @@
 import UIKit
 
 class AllChannelsViewController: UIViewController {
-    var presenter: AllChannelsPresenterProtocol!
+    weak var presenter: AllChannelsPresenterProtocol!
     
     var channels = Array<ChannelTO>()
     

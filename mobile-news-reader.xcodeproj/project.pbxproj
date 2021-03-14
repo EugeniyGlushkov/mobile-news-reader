@@ -29,6 +29,14 @@
 		6C6BB84725FE7AE800C58FA8 /* AllChannelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BB84525FE7AE800C58FA8 /* AllChannelsTableViewCell.swift */; };
 		6C6BB84825FE7AE800C58FA8 /* AllChannelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BB84625FE7AE800C58FA8 /* AllChannelsTableViewCell.xib */; };
 		6C6BB84D25FE7E6F00C58FA8 /* NameDiscribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BB84C25FE7E6F00C58FA8 /* NameDiscribable.swift */; };
+		6C6BB85825FE8E6800C58FA8 /* FavouriteChannelsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BB85725FE8E6800C58FA8 /* FavouriteChannelsViewProtocol.swift */; };
+		6C6BB85D25FE8FC200C58FA8 /* FavouriteChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BB85C25FE8FC200C58FA8 /* FavouriteChannelsViewController.swift */; };
+		6C6BB86425FE924C00C58FA8 /* FavouriteChannelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BB86225FE924C00C58FA8 /* FavouriteChannelsTableViewCell.swift */; };
+		6C6BB86525FE924C00C58FA8 /* FavouriteChannelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BB86325FE924C00C58FA8 /* FavouriteChannelsTableViewCell.xib */; };
+		6C6BB86E25FE94D800C58FA8 /* FavouriteChannelsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BB86D25FE94D800C58FA8 /* FavouriteChannelsPresenterProtocol.swift */; };
+		6C6BB87725FE957600C58FA8 /* FavouriteChannelsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BB87625FE957600C58FA8 /* FavouriteChannelsServiceProtocol.swift */; };
+		6C6BB87C25FE961C00C58FA8 /* FavouriteChannelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BB87B25FE961C00C58FA8 /* FavouriteChannelsPresenter.swift */; };
+		6C6BB88125FE986C00C58FA8 /* FavouriteChannelsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BB88025FE986C00C58FA8 /* FavouriteChannelsService.swift */; };
 		6C6E9AB025FC9C460019D774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6E9AAF25FC9C460019D774 /* AppDelegate.swift */; };
 		6C6E9AB225FC9C460019D774 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6E9AB125FC9C460019D774 /* SceneDelegate.swift */; };
 		6C6E9AB425FC9C460019D774 /* AllChannelsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6E9AB325FC9C460019D774 /* AllChannelsNavigationController.swift */; };
@@ -85,6 +93,14 @@
 		6C6BB84525FE7AE800C58FA8 /* AllChannelsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChannelsTableViewCell.swift; sourceTree = "<group>"; };
 		6C6BB84625FE7AE800C58FA8 /* AllChannelsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllChannelsTableViewCell.xib; sourceTree = "<group>"; };
 		6C6BB84C25FE7E6F00C58FA8 /* NameDiscribable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDiscribable.swift; sourceTree = "<group>"; };
+		6C6BB85725FE8E6800C58FA8 /* FavouriteChannelsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteChannelsViewProtocol.swift; sourceTree = "<group>"; };
+		6C6BB85C25FE8FC200C58FA8 /* FavouriteChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteChannelsViewController.swift; sourceTree = "<group>"; };
+		6C6BB86225FE924C00C58FA8 /* FavouriteChannelsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteChannelsTableViewCell.swift; sourceTree = "<group>"; };
+		6C6BB86325FE924C00C58FA8 /* FavouriteChannelsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteChannelsTableViewCell.xib; sourceTree = "<group>"; };
+		6C6BB86D25FE94D800C58FA8 /* FavouriteChannelsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteChannelsPresenterProtocol.swift; sourceTree = "<group>"; };
+		6C6BB87625FE957600C58FA8 /* FavouriteChannelsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteChannelsServiceProtocol.swift; sourceTree = "<group>"; };
+		6C6BB87B25FE961C00C58FA8 /* FavouriteChannelsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteChannelsPresenter.swift; sourceTree = "<group>"; };
+		6C6BB88025FE986C00C58FA8 /* FavouriteChannelsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteChannelsService.swift; sourceTree = "<group>"; };
 		6C6E9AAC25FC9C460019D774 /* mobile-news-reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-news-reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C6E9AAF25FC9C460019D774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C6E9AB125FC9C460019D774 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -258,6 +274,33 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		6C6BB86125FE921C00C58FA8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6C6BB86225FE924C00C58FA8 /* FavouriteChannelsTableViewCell.swift */,
+				6C6BB86325FE924C00C58FA8 /* FavouriteChannelsTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6C6BB86C25FE94AC00C58FA8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6C6BB86D25FE94D800C58FA8 /* FavouriteChannelsPresenterProtocol.swift */,
+				6C6BB87B25FE961C00C58FA8 /* FavouriteChannelsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		6C6BB87525FE955D00C58FA8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6C6BB87625FE957600C58FA8 /* FavouriteChannelsServiceProtocol.swift */,
+				6C6BB88025FE986C00C58FA8 /* FavouriteChannelsService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		6C6E9AA325FC9C460019D774 = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +386,8 @@
 		6C6E9B0F25FCDAA00019D774 /* FavouriteChannelsModule */ = {
 			isa = PBXGroup;
 			children = (
+				6C6BB87525FE955D00C58FA8 /* Service */,
+				6C6BB86C25FE94AC00C58FA8 /* Presenter */,
 				6C6E9B2925FCDE1E0019D774 /* View */,
 			);
 			path = FavouriteChannelsModule;
@@ -367,7 +412,10 @@
 		6C6E9B2925FCDE1E0019D774 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6C6BB86125FE921C00C58FA8 /* Cell */,
 				6C6E9B2D25FCDFA60019D774 /* FavouriteChannelsNavigationController.swift */,
+				6C6BB85725FE8E6800C58FA8 /* FavouriteChannelsViewProtocol.swift */,
+				6C6BB85C25FE8FC200C58FA8 /* FavouriteChannelsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -485,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C6E9ABC25FC9C470019D774 /* LaunchScreen.storyboard in Resources */,
+				6C6BB86525FE924C00C58FA8 /* FavouriteChannelsTableViewCell.xib in Resources */,
 				6C6BB84825FE7AE800C58FA8 /* AllChannelsTableViewCell.xib in Resources */,
 				6C6E9AB925FC9C470019D774 /* Assets.xcassets in Resources */,
 				6C6E9AB725FC9C460019D774 /* Main.storyboard in Resources */,
@@ -515,11 +564,13 @@
 				6C5CE94D25FCF165005B2795 /* CoreDataHelper.swift in Sources */,
 				6C70589A25FD3C3E00E7FCDE /* AllChannelsService.swift in Sources */,
 				6C5CE96D25FD00D2005B2795 /* AllChannelsPresenter.swift in Sources */,
+				6C6BB85D25FE8FC200C58FA8 /* FavouriteChannelsViewController.swift in Sources */,
 				6C6E9AB425FC9C460019D774 /* AllChannelsNavigationController.swift in Sources */,
 				6C6BB81B25FE3E7700C58FA8 /* ChannelsNetServiceProtocol.swift in Sources */,
 				6C6BB7F925FDF4B400C58FA8 /* ChannelTO.swift in Sources */,
 				6C6BB84D25FE7E6F00C58FA8 /* NameDiscribable.swift in Sources */,
 				6C6BB7E025FDEDA800C58FA8 /* New+CoreDataProperties.swift in Sources */,
+				6C6BB87725FE957600C58FA8 /* FavouriteChannelsServiceProtocol.swift in Sources */,
 				6C5CE96825FCFF4B005B2795 /* AllChannelsServiceProtocol.swift in Sources */,
 				6C6BB80625FDFA4800C58FA8 /* ChannelDaoProtocol.swift in Sources */,
 				6C7058AF25FD50A200E7FCDE /* Channel+CoreDataClass.swift in Sources */,
@@ -528,12 +579,16 @@
 				6C6BB83525FE630000C58FA8 /* Source.swift in Sources */,
 				6C7058B025FD50A200E7FCDE /* Channel+CoreDataProperties.swift in Sources */,
 				6C6BB82325FE3ECE00C58FA8 /* ChannelsNetService.swift in Sources */,
+				6C6BB87C25FE961C00C58FA8 /* FavouriteChannelsPresenter.swift in Sources */,
 				6C6BB80125FDF71E00C58FA8 /* ChannelDao.swift in Sources */,
 				6C6E9B2E25FCDFA60019D774 /* FavouriteChannelsNavigationController.swift in Sources */,
+				6C6BB86425FE924C00C58FA8 /* FavouriteChannelsTableViewCell.swift in Sources */,
+				6C6BB85825FE8E6800C58FA8 /* FavouriteChannelsViewProtocol.swift in Sources */,
 				6C70589525FD38E400E7FCDE /* ModuleConfigurator.swift in Sources */,
 				6C6BB83A25FE69A100C58FA8 /* Sources.swift in Sources */,
 				6C5CE94725FCF12F005B2795 /* CoreDataStack.swift in Sources */,
 				6C5CE96225FCFEEB005B2795 /* AllChannelsPresenterProtocol.swift in Sources */,
+				6C6BB86E25FE94D800C58FA8 /* FavouriteChannelsPresenterProtocol.swift in Sources */,
 				6C5CE95D25FCFDC1005B2795 /* AllChannelsViewController.swift in Sources */,
 				6C5CE97A25FD0BD1005B2795 /* MainTabBarController.swift in Sources */,
 				6C6E9AB025FC9C460019D774 /* AppDelegate.swift in Sources */,
@@ -541,6 +596,7 @@
 				6C6BB84725FE7AE800C58FA8 /* AllChannelsTableViewCell.swift in Sources */,
 				6C6E9AB225FC9C460019D774 /* SceneDelegate.swift in Sources */,
 				6C5CE93625FCEE6A005B2795 /* mobile-news-reader.xcdatamodeld in Sources */,
+				6C6BB88125FE986C00C58FA8 /* FavouriteChannelsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

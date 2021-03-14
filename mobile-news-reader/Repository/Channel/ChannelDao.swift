@@ -103,6 +103,25 @@ class ChannelDao: ChannelDaoProtocol {
         }
     }
     
+    func getFavourites() -> [ChannelTO] {
+        let fetchRequest: NSFetchRequest<Channel> = Channel.fetchRequest()
+        let predicate = NSPredicate(format: "any favourites = true")
+        fetchRequest.predicate = predicate
+        var channels: [Channel]
+        
+        do {
+            channels = try helper.context.fetch(fetchRequest)
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+        
+        return channels.map{
+            channel in
+            return ChannelTO.valueOf(channel: channel)
+        }
+    }
+    
     private func saveContext() {
         if helper.context.hasChanges {
             do {

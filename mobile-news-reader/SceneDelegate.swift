@@ -10,6 +10,7 @@ import UIKit
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let ALL_CHANNELS_NAVIGATION_CONTROLLER_INDEX = 0
+    let FAVOURITE_CHANNELS_NAVIGATION_CONTROLLER_INDEX = 1
 
     var window: UIWindow?
 
@@ -20,10 +21,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         ModuleConfigurator.configurateAllChannelsModule(vc: getAllChannelsVC())
+        ModuleConfigurator.configurateFavouriteChannelsModule(vc: getFavouriteChannelsVC())
     }
     
     private func getAllChannelsVC() -> AllChannelsViewController {
         return getVCFromNavController(byNavControllerIdxInTabBarController: ALL_CHANNELS_NAVIGATION_CONTROLLER_INDEX) as! AllChannelsViewController
+    }
+    
+    private func getFavouriteChannelsVC() -> FavouriteChannelsViewController {
+        return getVCFromNavController(byNavControllerIdxInTabBarController: FAVOURITE_CHANNELS_NAVIGATION_CONTROLLER_INDEX) as! FavouriteChannelsViewController
     }
     
     private func getVCFromNavController(byNavControllerIdxInTabBarController index: Int) -> UIViewController {
