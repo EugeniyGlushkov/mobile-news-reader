@@ -12,9 +12,7 @@ struct ChannelTO {
     let name: String
     let favourite: Bool
     
-    init(channel: Channel) {
-        id = channel.id!
-        name = channel.name!
-        favourite = channel.favourite
+    static func valueOf(channel: Channel) -> Self {
+        return ChannelTO(id: channel.id!, name: channel.name!, favourite: channel.favourite)
     }
 }

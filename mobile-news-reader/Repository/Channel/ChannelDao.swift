@@ -67,7 +67,7 @@ class ChannelDao: ChannelDaoProtocol {
             return nil
         }
         
-        return ChannelTO(channel: channel)
+        return ChannelTO.valueOf(channel: channel)
     }
     
     private func get(byId id: String, byName name: String, fetchRequest: NSFetchRequest<Channel>) -> Channel? {
@@ -97,7 +97,7 @@ class ChannelDao: ChannelDaoProtocol {
         
         return channels.map{
             channel in
-            return ChannelTO(channel: channel)
+            return ChannelTO.valueOf(channel: channel)
         }
     }
     

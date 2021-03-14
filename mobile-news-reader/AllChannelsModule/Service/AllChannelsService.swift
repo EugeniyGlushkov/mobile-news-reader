@@ -16,6 +16,9 @@ class AllChannelsService: AllChannelsServiceProtocol {
     }
     
     func getAllChannels() -> [ChannelTO] {
+        //TODO: - delete
+        repository.add(channel: ChannelTO(id: "1", name: "first", favourite: false))
+        
         return repository.getAll()
     }
 }
