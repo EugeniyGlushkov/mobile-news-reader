@@ -19,7 +19,7 @@ class AllChannelsPresenter: AllChannelsPresenterProtocol {
     }
     
     func showChannels() {
-        view.update(channels: service.getAllChannels())
+        view?.update(channels: service.getAllChannels())
         //TODO: - uncomment
         /*
         netService.getChannels { [weak self] result in

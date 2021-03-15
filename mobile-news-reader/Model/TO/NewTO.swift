@@ -29,4 +29,18 @@ struct NewTO {
                      published: new.published!,
                      content: new.content!)
     }
+    
+    static func valuesFrom(articles: Articles) -> [Self] {
+        return articles.articles.map { article in
+            return NewTO(source_id: article.source.id,
+                         source_name: article.source.name,
+                         author: article.author,
+                         title: article.title,
+                         new_description: article.description,
+                         url: URL(string: article.url)!,
+                         image_url: URL(string: article.urlToImage)!,
+                         published: ISO8601DateFormatter().date(from: article.publishedAt)!,
+                         content: article.content)
+        }
+    }
 }

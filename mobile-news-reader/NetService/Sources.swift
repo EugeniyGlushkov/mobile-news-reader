@@ -9,8 +9,7 @@ import Foundation
 
 struct Sources {
     let status: String
-    let sources: [Source]
-    
+    let sources: [Source]    
 }
 
 extension Sources: Decodable {}

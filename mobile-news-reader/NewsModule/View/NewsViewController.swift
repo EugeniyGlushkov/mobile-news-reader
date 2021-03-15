@@ -19,17 +19,26 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.tableFooterView = UIView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         presenter.showNews()
-    }    
+        super.viewDidAppear(animated)
+    }
 }
 
 extension NewsViewController: NewsViewProtocol {
     func update(news: [NewTO]) {
         self.news = news
+        tableView.reloadData()
     }
     
     func setPresenter(presenter: NewsPresenterProtocol) {
         self.presenter = presenter
+    }
+    
+    func failure(error: Error) {
+        //TODO: - realization is needed
     }
 }
 
@@ -40,7 +49,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-        cell.textLabel?.text = news[indexPath.row].published.description + " " + news[indexPath.row].title
+        cell.textLabel?.text = self.news[indexPath.row].published.description + " " + news[indexPath.row].title
         return cell
     }
 }

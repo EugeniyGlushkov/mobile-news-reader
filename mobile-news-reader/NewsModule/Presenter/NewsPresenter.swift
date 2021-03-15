@@ -8,7 +8,7 @@
 import Foundation
 
 class NewsPresenter: NewsPresenterProtocol {
-    weak private var view: NewsViewProtocol!
+    private var view: NewsViewProtocol!
     private let service: NewsServiceProtocol!
     private let netService: NetServiceProtocol!
     private let channel: ChannelTO
@@ -22,5 +22,24 @@ class NewsPresenter: NewsPresenterProtocol {
     
     func showNews() {
         view?.update(news: service.getNews(forChannel: channel))
-    }    
+        
+        netService.getNews(forChannel: channel) { [weak self] result in
+            guard let self = self else {
+                return
+            }
+            
+            switch result {
+            case .success(let articles):
+                let news = NewTO.valuesFrom(articles: articles ?? Articles(status: "ok", totalResults: 0, articles: []))
+                self.service.addAll(news: news)
+                DispatchQueue.main.async {
+                    self.view?.update(news: self.service.getNews(forChannel: self.channel))
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.view?.failure(error: error)
+                }
+            }
+        }
+    }
 }

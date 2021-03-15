@@ -10,4 +10,5 @@ import Foundation
 protocol NewsViewProtocol: AnyObject {
     func update(news: [NewTO])
     func setPresenter(presenter: NewsPresenterProtocol)
+    func failure(error: Error)
 }
