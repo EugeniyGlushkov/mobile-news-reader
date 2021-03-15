@@ -33,7 +33,7 @@ class ChannelDao: ChannelDaoProtocol {
         newChannel.id = channel.id
         newChannel.name = channel.name
         newChannel.favourite = channel.favourite
-        saveContext()
+        helper.saveContext()
     }
     
     func remove(byId id: String, byName name: String) {
@@ -44,7 +44,7 @@ class ChannelDao: ChannelDaoProtocol {
         }
         
         helper.context.delete(channelToDelete)
-        saveContext()
+        helper.saveContext()
     }
     
     func update(channel: ChannelTO) {
@@ -57,7 +57,7 @@ class ChannelDao: ChannelDaoProtocol {
         channelToUpdate.setValue(channel.id, forKey: "id")
         channelToUpdate.setValue(channel.name, forKey: "name")
         channelToUpdate.setValue(channel.favourite, forKey: "favourite")
-        saveContext()
+        helper.saveContext()
     }
     
     func get(byId id: String, byName name: String) -> ChannelTO? {
@@ -71,9 +71,9 @@ class ChannelDao: ChannelDaoProtocol {
     }
     
     private func get(byId id: String, byName name: String, fetchRequest: NSFetchRequest<Channel>) -> Channel? {
-        let predicate1 = NSPredicate(format: "any id = \"\(id)\"")
-        let predicate2 = NSPredicate(format: "any name = \"\(name)\"")
-        fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
+        let idPredicate = NSPredicate(format: "any id = \"\(id)\"")
+        let namePredicate = NSPredicate(format: "any name = \"\(name)\"")
+        fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [idPredicate, namePredicate])
         var channels: [Channel]
         
         do {
@@ -119,18 +119,6 @@ class ChannelDao: ChannelDaoProtocol {
         return channels.map{
             channel in
             return ChannelTO.valueOf(channel: channel)
-        }
-    }
-    
-    private func saveContext() {
-        if helper.context.hasChanges {
-            do {
-                try helper.context.save()
-            } catch {
-                helper.context.rollback()
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
         }
     }
 }

@@ -8,5 +8,7 @@
 import Foundation
 
 protocol NewsServiceProtocol {
-    func getNews(forChannel: ChannelTO) -> [NewTO]
+    init(repository: NewDaoProtocol)
+    func getNews(forChannel channel: ChannelTO) -> [NewTO]
+    func addAll(news: [NewTO])
 }

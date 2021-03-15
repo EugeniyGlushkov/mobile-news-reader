@@ -31,7 +31,8 @@ class ModuleConfigurator: Configurator {
     
     static func createNewsModule(channel: ChannelTO) -> UIViewController {
         let view = NewsViewController()
-        let service = NewsService()
+        let repository = NewDao.getInstance()
+        let service = NewsService(repository: repository)
         let netService = NetService()
         let presenter = NewsPresenter(view: view, service: service, netService: netService, channel: channel)
         view.setPresenter(presenter: presenter)

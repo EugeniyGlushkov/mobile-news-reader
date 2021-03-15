@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsViewController" customModule="mobile_news_reader" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="OMs-wt-DUK" id="mub-x6-n3c"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,17 +20,24 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9U-bg-byU">
-                    <rect key="frame" x="186" y="438" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OMs-wt-DUK">
+                    <rect key="frame" x="20" y="109" width="374" height="688"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="sxf-u8-zHU"/>
+                        <outlet property="delegate" destination="-1" id="FHW-75-g4C"/>
+                    </connections>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="-149" y="123"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OMs-wt-DUK" secondAttribute="trailing" constant="20" id="Uoe-vL-WZ3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OMs-wt-DUK" secondAttribute="bottom" constant="65" id="VN9-Mt-UcM"/>
+                <constraint firstItem="OMs-wt-DUK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="65" id="cJL-pZ-30A"/>
+                <constraint firstItem="OMs-wt-DUK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="sLD-DS-Re5"/>
+            </constraints>
+            <point key="canvasLocation" x="-149.27536231884059" y="122.54464285714285"/>
         </view>
     </objects>
     <resources>
