@@ -20,11 +20,11 @@ class ChannelDao: ChannelDaoProtocol {
     private let helper = CoreDataHelper()
     
     func add(channel: ChannelTO) {
-        let channelGuard = get(byId: channel.id, byName: channel.name)
+        /*let channelGuard = get(byId: channel.id, byName: channel.name)
         
         guard channelGuard == nil else {
             return
-        }
+        }*/
         
         guard let newChannel = NSEntityDescription.insertNewObject(forEntityName: "Channel", into: helper.context) as? Channel else {
             return
@@ -32,10 +32,10 @@ class ChannelDao: ChannelDaoProtocol {
         
         newChannel.id = channel.id
         newChannel.name = channel.name
-        newChannel.favourite = channel.favourite
+        newChannel.favourite = channel.favourite ?? false
         helper.saveContext()
     }
-    
+     
     func remove(byId id: String, byName name: String) {
         let fetchRequest: NSFetchRequest<Channel> = Channel.fetchRequest()
         
@@ -50,7 +50,7 @@ class ChannelDao: ChannelDaoProtocol {
     func update(channel: ChannelTO) {
         let fetchRequest: NSFetchRequest<Channel> = Channel.fetchRequest()
         
-        guard let channelToUpdate = get(byId: channel.id, byName: channel.name, fetchRequest: fetchRequest) else {
+        guard let channelToUpdate = get(byId: channel.id ?? "", byName: channel.name ?? "", fetchRequest: fetchRequest) else {
             return
         }
         

@@ -20,10 +20,10 @@ class NewDao: NewDaoProtocol {
     private let helper = CoreDataHelper()
     
     func add(new: NewTO) {
-        let newGuard = get(bySourceId: new.source_id,
-                           bySourceName: new.source_name,
-                           byAuthor: new.author,
-                           byTitle: new.title)
+        let newGuard = get(bySourceId: new.source_id ?? "",
+                           bySourceName: new.source_name ?? "",
+                           byAuthor: new.author ?? "",
+                           byTitle: new.title ?? "")
         
         guard newGuard == nil else {
             return
@@ -109,8 +109,8 @@ class NewDao: NewDaoProtocol {
     
     func getAll(byChannel channel: ChannelTO) -> [NewTO] {
         let fetchRequest: NSFetchRequest<New> = New.fetchRequest()
-        let sourceIdPredicate = NSPredicate(format: "any source_id = \"\(channel.id)\"")
-        let sourceNamePredicate = NSPredicate(format: "any source_name = \"\(channel.name)\"")
+        let sourceIdPredicate = NSPredicate(format: "any source_id = \"\(channel.id ?? "")\"")
+        let sourceNamePredicate = NSPredicate(format: "any source_name = \"\(channel.name ?? "")\"")
         fetchRequest.predicate =
             NSCompoundPredicate(andPredicateWithSubpredicates: [sourceIdPredicate, sourceNamePredicate])
         var news: [New]

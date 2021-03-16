@@ -8,9 +8,9 @@
 import Foundation
 
 struct Articles {
-    let status: String
-    let totalResults: Int
-    let articles: [Article]
+    var status: String?
+    var totalResults: Int?
+    var articles: [Article]?
 }
 
 extension Articles: Decodable {}

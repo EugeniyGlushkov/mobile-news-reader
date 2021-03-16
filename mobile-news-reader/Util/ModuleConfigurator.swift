@@ -10,6 +10,7 @@ import UIKit
 protocol Configurator {
     static func configurateAllChannelsModule(vc: AllChannelsViewProtocol)
     static func configurateFavouriteChannelsModule(vc: FavouriteChannelsViewProtocol)
+    static func configurateSearchModule(vc: SearchNewsViewProtocol)
     static func createNewsModule(channel: ChannelTO) -> UIViewController
 }
 
@@ -37,5 +38,13 @@ class ModuleConfigurator: Configurator {
         let presenter = NewsPresenter(view: view, service: service, netService: netService, channel: channel)
         view.setPresenter(presenter: presenter)
         return view
+    }
+    
+    static func configurateSearchModule(vc: SearchNewsViewProtocol) {
+        let repository = NewDao.getInstance()
+        let service = SearchNewsService(repository: repository)
+        let netService = NetService()
+        let presenter = SearchNewsPresenter(view: vc, service: service, netService: netService)
+        vc.setPresenter(presenter: presenter)
     }
 }

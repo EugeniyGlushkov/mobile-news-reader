@@ -8,8 +8,8 @@
 import Foundation
 
 struct Sources {
-    let status: String
-    let sources: [Source]    
+    var status: String?
+    var sources: [Source]?
 }
 
 extension Sources: Decodable {}

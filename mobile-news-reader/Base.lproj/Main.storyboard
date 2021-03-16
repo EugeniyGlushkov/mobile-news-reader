@@ -117,21 +117,51 @@
             </objects>
             <point key="canvasLocation" x="-846.00000000000011" y="514"/>
         </scene>
-        <!--View Controller-->
+        <!--Search News View Controller-->
         <scene sceneID="qng-Vt-kmJ">
             <objects>
-                <viewController id="m4v-hh-1Il" sceneMemberID="viewController">
+                <viewController id="m4v-hh-1Il" customClass="SearchNewsViewController" customModule="mobile_news_reader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g2J-ZN-4Cs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="M9o-vb-wSU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="m4v-hh-1Il" id="2AK-ky-UVQ"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MmE-bo-xfC">
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="m4v-hh-1Il" id="U9o-Uq-t2j"/>
+                                    <outlet property="delegate" destination="m4v-hh-1Il" id="hRv-uE-1I2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cEt-xG-OW2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MmE-bo-xfC" firstAttribute="top" secondItem="M9o-vb-wSU" secondAttribute="bottom" id="2EH-vs-BV0"/>
+                            <constraint firstItem="M9o-vb-wSU" firstAttribute="trailing" secondItem="cEt-xG-OW2" secondAttribute="trailing" id="DwK-bW-noW"/>
+                            <constraint firstItem="MmE-bo-xfC" firstAttribute="leading" secondItem="cEt-xG-OW2" secondAttribute="leading" id="R4Y-Yb-leH"/>
+                            <constraint firstItem="MmE-bo-xfC" firstAttribute="bottom" secondItem="cEt-xG-OW2" secondAttribute="bottom" id="bVO-XQ-9sm"/>
+                            <constraint firstItem="MmE-bo-xfC" firstAttribute="trailing" secondItem="cEt-xG-OW2" secondAttribute="trailing" id="hF6-l4-XVt"/>
+                            <constraint firstItem="M9o-vb-wSU" firstAttribute="top" secondItem="cEt-xG-OW2" secondAttribute="top" id="tbM-54-zgi"/>
+                            <constraint firstItem="M9o-vb-wSU" firstAttribute="leading" secondItem="cEt-xG-OW2" secondAttribute="leading" id="ydf-LM-bX4"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c92-ql-U1c"/>
+                    <connections>
+                        <outlet property="searchBar" destination="M9o-vb-wSU" id="xfo-BY-TPL"/>
+                        <outlet property="tableView" destination="MmE-bo-xfC" id="bSS-gO-lr3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zt-md-vmi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157.00000000000003" y="1242"/>
+            <point key="canvasLocation" x="155.07246376811597" y="1241.5178571428571"/>
         </scene>
         <!--Favourite Channels View Controller-->
         <scene sceneID="M6C-nU-fD4">

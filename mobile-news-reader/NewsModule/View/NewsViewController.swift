@@ -49,7 +49,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-        cell.textLabel?.text = self.news[indexPath.row].published.description + " " + news[indexPath.row].title
+        cell.textLabel?.text = self.news[indexPath.row].author ?? "Jhon Dow" + " " + (self.news[indexPath.row].title ?? "Mock title")
         return cell
     }
 }

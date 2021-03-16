@@ -8,16 +8,16 @@
 import Foundation
 
 struct ChannelTO {
-    let id: String
-    let name: String
-    var favourite: Bool
+    let id: String?
+    let name: String?
+    var favourite: Bool?
     
     static func copyOf(channel: ChannelTO) -> ChannelTO {
         return ChannelTO(id: channel.id, name: channel.name, favourite: channel.favourite)
     }
     
     static func valueOf(channel: Channel) -> Self {
-        return ChannelTO(id: channel.id!, name: channel.name!, favourite: channel.favourite)
+        return ChannelTO(id: channel.id, name: channel.name, favourite: channel.favourite)
     }
     
     static func valueOf(source: Source) -> Self {
@@ -25,7 +25,9 @@ struct ChannelTO {
     }
     
     static func valuesFrom(sources: Sources) -> [ChannelTO] {
-        return sources.sources.map{
+        guard let safeSources = sources.sources else { return [] }
+        
+        return safeSources.map{
             source in
             return valueOf(source: source)
         }

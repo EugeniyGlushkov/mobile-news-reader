@@ -11,6 +11,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let ALL_CHANNELS_NAVIGATION_CONTROLLER_INDEX = 0
     let FAVOURITE_CHANNELS_NAVIGATION_CONTROLLER_INDEX = 1
+    let SEARCH_NEWS_NAVIGATION_CONTROLLER_INDEX = 2
 
     var window: UIWindow?
 
@@ -22,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         ModuleConfigurator.configurateAllChannelsModule(vc: getAllChannelsVC())
         ModuleConfigurator.configurateFavouriteChannelsModule(vc: getFavouriteChannelsVC())
+        ModuleConfigurator.configurateSearchModule(vc: getSearchNewsVC())
     }
     
     private func getAllChannelsVC() -> AllChannelsViewController {
@@ -30,6 +32,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func getFavouriteChannelsVC() -> FavouriteChannelsViewController {
         return getVCFromNavController(byNavControllerIdxInTabBarController: FAVOURITE_CHANNELS_NAVIGATION_CONTROLLER_INDEX) as! FavouriteChannelsViewController
+    }
+    
+    private func getSearchNewsVC() -> SearchNewsViewController {
+        return getVCFromNavController(byNavControllerIdxInTabBarController: SEARCH_NEWS_NAVIGATION_CONTROLLER_INDEX) as! SearchNewsViewController
     }
     
     private func getVCFromNavController(byNavControllerIdxInTabBarController index: Int) -> UIViewController {

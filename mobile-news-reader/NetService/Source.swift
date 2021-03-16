@@ -8,13 +8,13 @@
 import Foundation
 
 struct Source {
-    let id: String
-    let name: String
-    let description: String
-    let url: String
-    let category: String
-    let language: String
-    let country: String
+    var id: String?
+    var name: String?
+    var description: String?
+    var url: String?
+    var category: String?
+    var language: String?
+    var country: String?
 }
 
 extension Source: Decodable {}
