@@ -62,7 +62,9 @@ extension SearchNewsViewController: UITableViewDataSource, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Celll")
-        cell?.textLabel?.text =  news[indexPath.row].author ?? "Jhon Dow" + " " + (news[indexPath.row].title ?? "Mock title")
+        let text =
+        cell?.textLabel?.text =  (news[indexPath.row].author ?? "No author") + "::::" + (news[indexPath.row].title ?? "No title")
+        print(cell?.textLabel?.text!)
         return cell!
     }
     

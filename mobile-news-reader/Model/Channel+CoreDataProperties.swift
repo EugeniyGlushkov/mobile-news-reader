@@ -2,7 +2,7 @@
 //  Channel+CoreDataProperties.swift
 //  mobile-news-reader
 //
-//  Created by evgen on 13.03.2021.
+//  Created by evgen on 17.03.2021.
 //
 //
 

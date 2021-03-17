@@ -2,7 +2,7 @@
 //  EntityNew+CoreDataClass.swift
 //  mobile-news-reader
 //
-//  Created by evgen on 15.03.2021.
+//  Created by evgen on 17.03.2021.
 //
 //
 
@@ -11,15 +11,15 @@ import CoreData
 
 @objc(EntityNew)
 public class EntityNew: NSManagedObject {
-    convenience init(author: String,
-                     content: String,
+    convenience init(url: URL,
+                     title: String,
+                     source_name: String,
+                     source_id: String,
+                     published: Date,
                      image_url: URL,
                      description_new: String,
-                     published: Date,
-                     source_id: String,
-                     source_name: String,
-                     title: String,
-                     url: URL,
+                     content: String,
+                     author: String,
                      context: NSManagedObjectContext) {
         if let ent = NSEntityDescription.entity(forEntityName: "EntityNew", in: context) {
             self.init(entity: ent, insertInto: context)
