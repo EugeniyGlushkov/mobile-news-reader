@@ -27,3 +27,7 @@ extension EntityNew {
     @NSManaged public var url: URL?
 
 }
+
+extension EntityNew : Identifiable {
+
+}
