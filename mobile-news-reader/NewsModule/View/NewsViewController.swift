@@ -17,7 +17,7 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.registerNib(with: PreviewNewTableViewCell.self)
         tableView.tableFooterView = UIView()
     }
     
@@ -48,8 +48,9 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-        cell.textLabel?.text = self.news[indexPath.row].author ?? "Jhon Dow" + " " + (self.news[indexPath.row].title ?? "Mock title")
+        let cell = tableView.dequeueReusableCell(with: PreviewNewTableViewCell.self)
+        //TODO: - need delete
+        //cell.textLabel?.text = self.news[indexPath.row].author ?? "Jhon Dow" + " " + (self.news[indexPath.row].title ?? "Mock title")
         return cell
     }
 }
