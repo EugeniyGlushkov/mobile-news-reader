@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol SearchNewsPresenterProtocol: AnyObject {
     init(view: SearchNewsViewProtocol, service: SearchNewsServiceProtocol, netService: NetServiceProtocol)
-    func searchNews(forStrinf string: String)
+    func searchNews(forString string: String)
+    func loadImage(url: URL, toView view: UIImageView)
 }

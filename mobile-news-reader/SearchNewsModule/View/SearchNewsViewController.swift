@@ -21,7 +21,7 @@ class SearchNewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Celll")
+        tableView.registerNib(with: PreviewNewTableViewCell.self)
         /*tableView.dataSource = self
         tableView.delegate = self*/
         tableView.tableFooterView = UIView()
@@ -57,9 +57,9 @@ extension SearchNewsViewController: UITableViewDataSource, UITableViewDelegate, 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Celll")
-        //cell?.textLabel?.text =  (news[indexPath.row].author ?? "No author") + "::::" + (news[indexPath.row].title ?? "No title")
-        return cell!
+        let cell = tableView.dequeueReusableCell(with: PreviewNewTableViewCell.self)
+        presenter.loadImage(url: news[indexPath.row].image_url!, toView: cell.previewImageView!)
+        return cell
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -71,6 +71,6 @@ extension SearchNewsViewController: UITableViewDataSource, UITableViewDelegate, 
             return
         }
         
-        presenter.searchNews(forStrinf: text)
+        presenter.searchNews(forString: text)
     }
 }

@@ -8,7 +8,10 @@
 import UIKit
 
 class PreviewNewTableViewCell: UITableViewCell {
-
+    //MARK: - IBOutlet
+    @IBOutlet weak var previewImageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,5 +22,5 @@ class PreviewNewTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }
