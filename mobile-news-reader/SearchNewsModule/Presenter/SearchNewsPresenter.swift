@@ -40,48 +40,25 @@ class SearchNewsPresenter: SearchNewsPresenterProtocol {
         }
     }
 
-    func loadImage(url: URL, toView view: UIImageView) {
-        netService.acyncLoadImage(url: url) { result, error in
-            guard let image = result else {
-                self.view.failure(error: error!)
-                return
+    func loadImages(news: [NewTO]) {
+        var urlsToImages: [URL: UIImage] = [:]
+
+        for i in 0..<news.count {
+            netService.acyncLoadImage(url: news[i].image_url!) { result, error in
+
+                guard let image = result else {
+                    self.view.failure(error: error!)
+                    return
+                }
+
+                urlsToImages[news[i].image_url!] = image
+
+                if urlsToImages.count == news.count{
+                    DispatchQueue.main.async{
+                        self.view.updateImages(imageUrlsToImages: urlsToImages)
+                    }
+                }
             }
-
-            view.image = image.toSquare()!.resizeImage(targetSize: CGSize(width: 346, height: 346))
         }
-    }
-}
-
-extension UIImage {
-  func resizeImage(targetSize: CGSize) -> UIImage {
-    let size = self.size
-    let widthRatio  = targetSize.width  / size.width
-    let heightRatio = targetSize.height / size.height
-    let newSize = widthRatio > heightRatio ?  CGSize(width: size.width * heightRatio, height: size.height * heightRatio) : CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
-    let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-
-    UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-    self.draw(in: rect)
-    let newImage = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-
-    
-    return newImage!
-  }
-    
-    func toSquare() -> UIImage? {
-        guard let selfImage = self.cgImage else {
-            return nil
-        }
-        let cutSize = selfImage.width > selfImage.height ? selfImage.height : selfImage.width
-        let shiftX = selfImage.width > selfImage.height ? (selfImage.width - cutSize) / 2 : 0
-        let shiftY = selfImage.width > selfImage.height ? 0 : (selfImage.height - cutSize) / 2
-        let rect = CGRect(x: shiftX, y: shiftY, width: cutSize, height: cutSize)
-        
-        guard let cgImage = self.cgImage?.cropping(to: rect) else {
-            return nil
-        }
-
-        return UIImage(cgImage: cgImage)
     }
 }

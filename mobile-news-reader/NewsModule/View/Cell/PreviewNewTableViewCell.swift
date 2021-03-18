@@ -9,7 +9,8 @@ import UIKit
 
 class PreviewNewTableViewCell: UITableViewCell {
     //MARK: - IBOutlet
-    @IBOutlet weak var previewImageView: UIImageView!
+    @IBOutlet weak var view: UIView!
+    
     
     
     override func awakeFromNib() {
