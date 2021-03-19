@@ -89,3 +89,4 @@ fastlane/test_output
 
 iOSInjectionProject/
 .idea
+/mobile-news-reader.xcodeproj/xcshareddata/xcschemes/mobile-news-reader.xcscheme
