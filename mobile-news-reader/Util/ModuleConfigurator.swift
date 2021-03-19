@@ -39,6 +39,14 @@ class ModuleConfigurator: Configurator {
         view.setPresenter(presenter: presenter)
         return view
     }
+
+    static func createNewDescriptionModule(new: NewTO) -> UIViewController {
+        let view = NewDetailsViewController()
+        let netService = NetService()
+        let presenter = NewDetailsPresenter(view: view, netService: netService, new: new)
+        view.setPresenter(presenter: presenter)
+        return view
+    }
     
     static func configurateSearchModule(vc: SearchNewsViewProtocol) {
         let repository = NewDao.getInstance()

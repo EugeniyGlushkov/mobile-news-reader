@@ -68,4 +68,9 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
 
         return cell
     }
+
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newDetailsVC = ModuleConfigurator.createNewDescriptionModule(new: news[indexPath.row])
+        navigationController?.pushViewController(newDetailsVC, animated: true)
+    }
 }

@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5C6780231EF4442854DDF22B /* NewDetailsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6780DB34ABB0160CED9F24 /* NewDetailsPresenterProtocol.swift */; };
+		5C678387566B14E174C4838A /* NewDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C678E62D17726B49EBFF378 /* NewDetailsViewController.swift */; };
 		5C6785440D3015B987BD69F5 /* NewDetailsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C678D09F480A5F4A0654265 /* NewDetailsViewProtocol.swift */; };
 		5C678D0121051DD05C017EDC /* NewDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67831B98A2B1D4FD5150F8 /* NewDetailsPresenter.swift */; };
+		5C678D5B9F5318D659DF870F /* NewDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C6789DC9C19EE142595B071 /* NewDetailsViewController.xib */; };
 		5C678FCC0DADA0E2075D581F /* NewDetailsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6784C2FCEE0AB884B58393 /* NewDetailsServiceProtocol.swift */; };
 		6C5BAAD225FF5956003D8903 /* SearchNewsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5BAAD125FF5956003D8903 /* SearchNewsViewProtocol.swift */; };
 		6C5BAAD725FF5988003D8903 /* SearchNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5BAAD625FF5988003D8903 /* SearchNewsViewController.swift */; };
@@ -98,7 +100,9 @@
 		5C6780DB34ABB0160CED9F24 /* NewDetailsPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDetailsPresenterProtocol.swift; sourceTree = "<group>"; };
 		5C67831B98A2B1D4FD5150F8 /* NewDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDetailsPresenter.swift; sourceTree = "<group>"; };
 		5C6784C2FCEE0AB884B58393 /* NewDetailsServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDetailsServiceProtocol.swift; sourceTree = "<group>"; };
+		5C6789DC9C19EE142595B071 /* NewDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewDetailsViewController.xib; sourceTree = "<group>"; };
 		5C678D09F480A5F4A0654265 /* NewDetailsViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDetailsViewProtocol.swift; sourceTree = "<group>"; };
+		5C678E62D17726B49EBFF378 /* NewDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDetailsViewController.swift; sourceTree = "<group>"; };
 		6C5BAAD125FF5956003D8903 /* SearchNewsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsViewProtocol.swift; sourceTree = "<group>"; };
 		6C5BAAD625FF5988003D8903 /* SearchNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsViewController.swift; sourceTree = "<group>"; };
 		6C5BAADC25FF5A47003D8903 /* SearchNewsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsServiceProtocol.swift; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				5C678D09F480A5F4A0654265 /* NewDetailsViewProtocol.swift */,
+				5C678E62D17726B49EBFF378 /* NewDetailsViewController.swift */,
+				5C6789DC9C19EE142595B071 /* NewDetailsViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -691,6 +697,7 @@
 				6C6E9AB725FC9C460019D774 /* Main.storyboard in Resources */,
 				6C6BB8B725FEC9BB00C58FA8 /* NewsViewController.xib in Resources */,
 				6C6D090C260226FC00BD5535 /* PreviewNewTableViewCell.xib in Resources */,
+				5C678D5B9F5318D659DF870F /* NewDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -773,6 +780,7 @@
 				5C6785440D3015B987BD69F5 /* NewDetailsViewProtocol.swift in Sources */,
 				5C678FCC0DADA0E2075D581F /* NewDetailsServiceProtocol.swift in Sources */,
 				5C678D0121051DD05C017EDC /* NewDetailsPresenter.swift in Sources */,
+				5C678387566B14E174C4838A /* NewDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
