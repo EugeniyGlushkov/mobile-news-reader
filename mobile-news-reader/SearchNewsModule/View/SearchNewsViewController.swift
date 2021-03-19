@@ -68,16 +68,8 @@ extension SearchNewsViewController: UITableViewDataSource, UITableViewDelegate, 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(with: PreviewNewTableViewCell.self)
-        cell.view.layer.cornerRadius = 15
-        cell.descriptionTextView.layer.cornerRadius = 15
-        cell.descriptionTextView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        cell.configViews()
         let currentNew = news[indexPath.row]
-        cell.titleTextView.textContainer.maximumNumberOfLines = 1
-        cell.descriptionTextView.textContainer.maximumNumberOfLines = 2
-        cell.titleTextView.textContainer.lineBreakMode = .byTruncatingTail
-        cell.descriptionTextView.textContainer.lineBreakMode = .byTruncatingTail
-        cell.clipsToBounds = true
-
         cell.titleTextView.text = currentNew.title
         cell.descriptionTextView.text = currentNew.description_new
 
