@@ -45,8 +45,6 @@ class NewsPresenter: NewsPresenterProtocol {
     }
 
     func loadImages(news: [NewTO]) {
-        var urlsToImages: [URL: UIImage] = [:]
-
         for i in 0..<news.count {
             netService.acyncLoadImage(url: news[i].image_url!) { result, error in
 

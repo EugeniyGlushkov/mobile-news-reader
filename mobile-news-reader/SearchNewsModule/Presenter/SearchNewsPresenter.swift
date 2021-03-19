@@ -41,8 +41,6 @@ class SearchNewsPresenter: SearchNewsPresenterProtocol {
     }
 
     func loadImages(news: [NewTO]) {
-        var urlsToImages: [URL: UIImage] = [:]
-
         for i in 0..<news.count {
             netService.acyncLoadImage(url: news[i].image_url!) { result, error in
 
@@ -51,12 +49,10 @@ class SearchNewsPresenter: SearchNewsPresenterProtocol {
                     return
                 }
 
-                urlsToImages[news[i].image_url!] = image
+                self.view.imageUrlsToImages[news[i].image_url!] = image
 
-                if urlsToImages.count == news.count{
-                    DispatchQueue.main.async{
-                        self.view.updateImages(imageUrlsToImages: urlsToImages)
-                    }
+                DispatchQueue.main.async {
+                    self.view.updateImages()
                 }
             }
         }

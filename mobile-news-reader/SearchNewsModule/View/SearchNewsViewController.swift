@@ -41,8 +41,7 @@ extension SearchNewsViewController: SearchNewsViewProtocol {
         tableView.reloadData()
     }
 
-    func updateImages(imageUrlsToImages: [URL:UIImage]) {
-        self.imageUrlsToImages = imageUrlsToImages
+    func updateImages() {
         tableView.reloadData()
     }
 
@@ -68,7 +67,7 @@ extension SearchNewsViewController: UITableViewDataSource, UITableViewDelegate, 
         cell.titleTextView.text = currentNew.title
         cell.descriptionTextView.text = currentNew.description_new
 
-        if imageUrlsToImages.count > 0 {
+        if imageUrlsToImages.count > 0 && imageUrlsToImages.keys.contains(news[indexPath.row].image_url!) {
             let image = imageUrlsToImages[news[indexPath.row].image_url!]!
             let fittedImage = image.toSquare()!.resizeImage(targetSize: CGSize(width: 346, height: 346))
             cell.view.backgroundColor = UIColor(patternImage: fittedImage)

@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 protocol SearchNewsViewProtocol: AnyObject {
+    var imageUrlsToImages: [URL: UIImage] {get set}
     func update(news: [NewTO])
-    func updateImages(imageUrlsToImages: [URL:UIImage])
+    func updateImages()
     func setPresenter(presenter: SearchNewsPresenterProtocol)
     func failure(error: Error)
 }
