@@ -36,16 +36,16 @@ class NetService: NetServiceProtocol {
     func getNews(forChannel channel: ChannelTO, completion: @escaping (Result<Articles?, Error>) -> Void) {
         let urlString = "https://newsapi.org/v2/everything?sources=\(channel.id ?? "")&apiKey=\(Self.APY_KEY)"
 
-        return getNew(forUdlString: urlString, completion: completion)
+        return getNew(forUrlString: urlString, completion: completion)
     }
 
     func searchNews(forString string: String, completion: @escaping (Result<Articles?, Error>) -> Void) {
         let urlString = "https://newsapi.org/v2/everything?q='\(string)'&apiKey=\(Self.APY_KEY)"
 
-        getNew(forUdlString: urlString, completion: completion)
+        getNew(forUrlString: urlString, completion: completion)
     }
 
-    private func getNew(forUdlString urlString: String, completion: @escaping (Result<Articles?, Error>) -> Void) {
+    private func getNew(forUrlString urlString: String, completion: @escaping (Result<Articles?, Error>) -> Void) {
         guard let url = URL(string: urlString) else {
             return
         }

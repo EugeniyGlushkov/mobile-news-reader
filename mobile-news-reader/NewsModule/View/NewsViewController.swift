@@ -11,6 +11,7 @@ class NewsViewController: UIViewController {
 
     private var presenter: NewsPresenterProtocol!
     private var news = Array<NewTO>()
+    var imageUrlsToImages: [URL: UIImage] = [:]
     
     //MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
@@ -30,6 +31,11 @@ class NewsViewController: UIViewController {
 extension NewsViewController: NewsViewProtocol {
     func update(news: [NewTO]) {
         self.news = news
+        self.presenter.loadImages(news: news)
+        tableView.reloadData()
+    }
+
+    func updateImages() {
         tableView.reloadData()
     }
     
@@ -49,8 +55,17 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(with: PreviewNewTableViewCell.self)
-        //TODO: - need delete
-        //cell.textLabel?.text = self.news[indexPath.row].author ?? "Jhon Dow" + " " + (self.news[indexPath.row].title ?? "Mock title")
+        cell.configViews()
+        let currentNew = news[indexPath.row]
+        cell.titleTextView.text = currentNew.title
+        cell.descriptionTextView.text = currentNew.description_new
+
+        if imageUrlsToImages.count > 0 && imageUrlsToImages.keys.contains(news[indexPath.row].image_url!) {
+            let image = imageUrlsToImages[news[indexPath.row].image_url!]!
+            let fittedImage = image.toSquare()!.resizeImage(targetSize: CGSize(width: 346, height: 346))
+            cell.view.backgroundColor = UIColor(patternImage: fittedImage)
+        }
+
         return cell
     }
 }

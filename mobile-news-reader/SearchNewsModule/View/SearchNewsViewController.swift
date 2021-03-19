@@ -10,10 +10,8 @@ import UIKit
 
 class SearchNewsViewController: UIViewController {
     var presenter: SearchNewsPresenterProtocol!
-
     var news = Array<NewTO>()
     var imageUrlsToImages: [URL: UIImage] = [:]
-    var imagesWasLoaded = false
 
     //MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
@@ -24,8 +22,6 @@ class SearchNewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(with: PreviewNewTableViewCell.self)
-        /*tableView.dataSource = self
-        tableView.delegate = self*/
         tableView.tableFooterView = UIView()
     }
 
@@ -33,7 +29,6 @@ class SearchNewsViewController: UIViewController {
         news = []
         searchBar.text = ""
         imageUrlsToImages = [:]
-        imagesWasLoaded = false
         tableView.reloadData()
         super.viewDidDisappear(animated)
     }

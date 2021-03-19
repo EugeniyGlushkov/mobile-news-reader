@@ -6,24 +6,25 @@
 //
 
 import Foundation
+import UIKit
 
 class NewsPresenter: NewsPresenterProtocol {
     private var view: NewsViewProtocol!
     private let service: NewsServiceProtocol!
     private let netService: NetServiceProtocol!
     private let channel: ChannelTO
-    
+
     required init(view: NewsViewProtocol, service: NewsServiceProtocol, netService: NetServiceProtocol, channel: ChannelTO) {
         self.view = view
         self.service = service
         self.netService = netService
         self.channel = channel
     }
-    
+
     func showNews() {
         view?.update(news: service.getNews(forChannel: channel))
-        
-        netService.getNews(forChannel: channel) { [weak self] result in
+
+        /*netService.getNews(forChannel: channel) { [weak self] result in
             guard let self = self else {
                 return
             }
@@ -38,6 +39,26 @@ class NewsPresenter: NewsPresenterProtocol {
             case .failure(let error):
                 DispatchQueue.main.async {
                     self.view?.failure(error: error)
+                }
+            }
+        }*/
+    }
+
+    func loadImages(news: [NewTO]) {
+        var urlsToImages: [URL: UIImage] = [:]
+
+        for i in 0..<news.count {
+            netService.acyncLoadImage(url: news[i].image_url!) { result, error in
+
+                guard let image = result else {
+                    self.view.failure(error: error!)
+                    return
+                }
+
+                self.view.imageUrlsToImages[news[i].image_url!] = image
+
+                DispatchQueue.main.async {
+                    self.view.updateImages()
                 }
             }
         }

@@ -10,4 +10,5 @@ import Foundation
 protocol NewsPresenterProtocol: AnyObject {
     init(view: NewsViewProtocol, service: NewsServiceProtocol, netService: NetServiceProtocol, channel: ChannelTO)
     func showNews()
+    func loadImages(news: [NewTO])
 }
