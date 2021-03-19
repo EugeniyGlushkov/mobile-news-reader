@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,9 +19,39 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSs-US-uD3">
                         <rect key="frame" x="10" y="10" width="350" height="350"/>
-                        <color key="backgroundColor" name="AccentColor"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYH-NQ-KoC">
+                                <rect key="frame" x="0.0" y="230" width="350" height="65"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="EWT-qi-FsB"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="REg-fp-WlQ">
+                                <rect key="frame" x="0.0" y="295" width="350" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="tNL-Wx-kpT"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81366563960000005" green="0.83413485679999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dYH-NQ-KoC" secondAttribute="trailing" id="0R4-to-iy9"/>
+                            <constraint firstItem="REg-fp-WlQ" firstAttribute="top" secondItem="dYH-NQ-KoC" secondAttribute="bottom" id="1WO-pS-fH1"/>
                             <constraint firstAttribute="height" constant="350" id="26G-sa-Lyc"/>
+                            <constraint firstItem="REg-fp-WlQ" firstAttribute="leading" secondItem="dSs-US-uD3" secondAttribute="leading" id="5sa-ji-bOH"/>
+                            <constraint firstAttribute="trailing" secondItem="REg-fp-WlQ" secondAttribute="trailing" id="6Ik-XN-EiM"/>
+                            <constraint firstAttribute="bottom" secondItem="REg-fp-WlQ" secondAttribute="bottom" id="FIJ-Ua-I3G"/>
+                            <constraint firstItem="dYH-NQ-KoC" firstAttribute="leading" secondItem="dSs-US-uD3" secondAttribute="leading" id="K7S-w4-LrS"/>
                             <constraint firstAttribute="width" constant="350" id="gZB-7E-nag"/>
                         </constraints>
                     </view>
@@ -34,14 +63,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="descriptionTextView" destination="REg-fp-WlQ" id="rvj-73-Ab2"/>
+                <outlet property="titleTextView" destination="dYH-NQ-KoC" id="lhd-rc-YgT"/>
                 <outlet property="view" destination="dSs-US-uD3" id="zhY-ei-dZY"/>
             </connections>
             <point key="canvasLocation" x="121.73913043478262" y="67.633928571428569"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>

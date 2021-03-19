@@ -11,7 +11,11 @@ class PreviewNewTableViewCell: UITableViewCell {
     //MARK: - IBOutlet
     @IBOutlet weak var view: UIView!
     
+    //MARK: - IBOutlet
+    @IBOutlet weak var titleTextView: UITextView!
     
+    //MARK: - IBOutlet
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
