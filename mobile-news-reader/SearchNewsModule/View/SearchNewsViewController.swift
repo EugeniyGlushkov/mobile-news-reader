@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class SearchNewsViewController: UIViewController {
+    //TODO: - fit image grey borders not visible
     var presenter: SearchNewsPresenterProtocol!
     var news = Array<NewTO>()
     var imageUrlsToImages: [URL: UIImage] = [:]
@@ -23,14 +24,6 @@ class SearchNewsViewController: UIViewController {
         super.viewDidLoad()
         tableView.registerNib(with: PreviewNewTableViewCell.self)
         tableView.tableFooterView = UIView()
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        news = []
-        searchBar.text = ""
-        imageUrlsToImages = [:]
-        tableView.reloadData()
-        super.viewDidDisappear(animated)
     }
 }
 
@@ -74,6 +67,11 @@ extension SearchNewsViewController: UITableViewDataSource, UITableViewDelegate, 
         }
 
         return cell
+    }
+
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newDetailsVC = ModuleConfigurator.createNewDescriptionModule(new: news[indexPath.row])
+        navigationController?.pushViewController(newDetailsVC, animated: true)
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

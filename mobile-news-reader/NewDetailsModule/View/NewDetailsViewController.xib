@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewDetailsViewController" customModule="mobile_news_reader" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="7aS-RO-rqf" id="roz-D3-pIk"/>
                 <outlet property="scrollView" destination="g67-6g-lTL" id="M1i-Cw-1o2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,6 +23,21 @@
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g67-6g-lTL">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7aS-RO-rqf">
+                            <rect key="frame" x="8" y="0.0" width="398" height="250"/>
+                            <color key="backgroundColor" red="0.81366563960000005" green="0.83413485679999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="250" id="HVX-lc-kFo"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="7aS-RO-rqf" firstAttribute="centerX" secondItem="g67-6g-lTL" secondAttribute="centerX" id="8bW-LA-Lh7"/>
+                        <constraint firstItem="ru2-hu-9Mw" firstAttribute="trailing" secondItem="7aS-RO-rqf" secondAttribute="trailing" constant="8" id="U0g-Ap-sz8"/>
+                        <constraint firstItem="7aS-RO-rqf" firstAttribute="top" secondItem="ru2-hu-9Mw" secondAttribute="top" id="enX-4x-SqO"/>
+                        <constraint firstItem="7aS-RO-rqf" firstAttribute="leading" secondItem="ru2-hu-9Mw" secondAttribute="leading" constant="8" id="epG-3m-mvp"/>
+                    </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="vBn-QX-DLs"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="ru2-hu-9Mw"/>
                 </scrollView>
