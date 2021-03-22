@@ -20,8 +20,6 @@ class AllChannelsPresenter: AllChannelsPresenterProtocol {
     
     func showChannels() {
         view?.update(channels: service.getAllChannels())
-        //TODO: - uncomment
-        /*
         netService.getChannels { [weak self] result in
             guard let self = self else {
                 return
@@ -30,8 +28,8 @@ class AllChannelsPresenter: AllChannelsPresenterProtocol {
             switch result {
             case .success(let sources):
                 let channels = ChannelTO.valuesFrom(sources: sources ?? Sources(status: "ok", sources: []))
-                self.service.addAll(channels: channels)
                 DispatchQueue.main.async {
+                    self.service.addAll(channels: channels)
                     self.view?.update(channels: self.service.getAllChannels())
                 }
             case .failure(let error):
@@ -39,7 +37,7 @@ class AllChannelsPresenter: AllChannelsPresenterProtocol {
                     self.view?.failure(error: error)
                 }
             }
-        }*/
+        }
     }
     
     func addToFavourites(channel: ChannelTO) {
