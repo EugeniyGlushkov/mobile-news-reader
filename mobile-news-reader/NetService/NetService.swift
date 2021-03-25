@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 class NetService: NetServiceProtocol {
-    private static let APY_KEY = "c1bd18a5fe4b48fd80074bc490ace0bb"
+    //private static let APY_KEY = "c1bd18a5fe4b48fd80074bc490ace0bb"
+    private static let APY_KEY = "40a8a0221bb24f1bb986d6ba031b8393"
 
     func getChannels(completion: @escaping (Result<Sources?, Error>) -> Void) {
         let urlString = "https://newsapi.org/v2/sources?apiKey=\(Self.APY_KEY)"

@@ -89,7 +89,7 @@ class NewDao: NewDaoProtocol {
         let sourceIdPredicate = NSPredicate(format: "any source_id = \"\(source_id)\"")
         let sourceNamePredicate = NSPredicate(format: "any source_name = \"\(source_name)\"")
         let authorPredicate = NSPredicate(format: "any author = \"\(author)\"")
-        let titlePredicate = NSPredicate(format: "any title = \"\(title)\"")
+        let titlePredicate = NSPredicate(format: "any title = %@", title)
         fetchRequest.predicate =
                 NSCompoundPredicate(andPredicateWithSubpredicates: [sourceIdPredicate,
                                                                     sourceNamePredicate,
