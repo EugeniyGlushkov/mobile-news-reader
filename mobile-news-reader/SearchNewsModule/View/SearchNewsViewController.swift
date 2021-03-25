@@ -60,13 +60,28 @@ extension SearchNewsViewController: UITableViewDataSource, UITableViewDelegate, 
         cell.titleTextView.text = currentNew.title
         cell.descriptionTextView.text = currentNew.description_new
 
-        if imageUrlsToImages.count > 0 && imageUrlsToImages.keys.contains(news[indexPath.row].image_url!) {
-            let image = imageUrlsToImages[news[indexPath.row].image_url!]!
-            let fittedImage = image.toSquare()!.resizeImage(targetSize: CGSize(width: 346, height: 346))
+        if let fittedImage = getFittedImageByUrl(imageUrl: currentNew.image_url) {
             cell.view.backgroundColor = UIColor(patternImage: fittedImage)
         }
 
         return cell
+    }
+
+    private func getFittedImageByUrl(imageUrl: URL?) -> UIImage? {
+        var fittedImage: UIImage?
+
+        guard let url = imageUrl else {
+            return fittedImage
+        }
+
+        guard imageUrlsToImages.count > 0 && imageUrlsToImages.keys.contains(url) else {
+            return fittedImage
+        }
+
+        let image = imageUrlsToImages[url]!
+        fittedImage = image.toSquare()!.resizeImage(targetSize: CGSize(width: 346, height: 346))
+
+        return fittedImage
     }
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -28,7 +28,7 @@ class NewsPresenter: NewsPresenterProtocol {
             guard let self = self else {
                 return
             }
-            
+
             switch result {
             case .success(let articles):
                 let news = NewTO.valuesFrom(articles: articles ?? Articles(status: "ok", totalResults: 0, articles: []))
@@ -46,14 +46,18 @@ class NewsPresenter: NewsPresenterProtocol {
 
     func loadImages(news: [NewTO]) {
         for i in 0..<news.count {
-            netService.acyncLoadImage(url: news[i].image_url!) { result, error in
+            guard let imageUrl = news[i].image_url else {
+                continue
+            }
+
+            netService.acyncLoadImage(url: imageUrl) { result, error in
 
                 guard let image = result else {
                     self.view.failure(error: error!)
                     return
                 }
 
-                self.view.imageUrlsToImages[news[i].image_url!] = image
+                self.view.imageUrlsToImages[imageUrl] = image
 
                 DispatchQueue.main.async {
                     self.view.updateImages()
